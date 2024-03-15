@@ -19,14 +19,12 @@ import { Car } from "./Car";
 import { Ground } from "./Ground";
 import { FloatingGrid } from "./FloatingGrid";
 import { Rings } from "./Rings";
+import Loading from "./loading";
 
 function CarShow() {
   return (
     <>
-      <OrbitControls 
-        target={[0, 0.35, 0]}
-        maxPolarAngle={1.45}
-      />
+      <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={1.45} />
 
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
 
@@ -86,7 +84,7 @@ function CarShow() {
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loading />}>
       <Canvas shadows>
         <CarShow />
       </Canvas>

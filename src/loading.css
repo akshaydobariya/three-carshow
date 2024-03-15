@@ -1,0 +1,38 @@
+.ui-table-loading {
+  background-color: rgba(868989, 0.85);
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.ui-table-loading-content {
+  svg {
+    transform: scale(2);
+    margin-bottom: 8px;
+    polyline {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      &#back {
+        stroke: #fafafa;
+      }
+      &#front {
+        stroke: #3ed9f1;
+        stroke-dasharray: 24, 72;
+        stroke-dashoffset: 96;
+        animation: dash 1.5s linear infinite;
+      }
+    }
+  }
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
